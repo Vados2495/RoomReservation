@@ -5,8 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RoomReservation"
         mc:Ignorable="d"
-        Title="Users" Height="450" Width="800">
+        Title="Users" Height="464" Width="807">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="20 10 20 10"/>
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Height" Value="30"/>
+        </Style>
+    </Window.Resources>
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <DataGrid AutoGenerateColumns="False" x:Name ="usersGrid" Margin="0,0,218,50">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Id}" Header="Id" Width="50"/>
+                <DataGridTextColumn Binding="{Binding Username}" Header="Username" Width="*"/>
+                <DataGridTextColumn Binding="{Binding Email}" Header="Email" Width="100"/>
+                <DataGridTextColumn Binding="{Binding Password}" Header="Password" Width="*"/>
+                <DataGridTextColumn Binding="{Binding ConfirmPassword}" Header="ConfirmPassword" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" Margin="139,398,0,-4" Grid.RowSpan="2">
+            <Button x:Name="addButton" FontSize="16" Content="Добавить" Click="addButton_Click"/>
+            <Button x:Name="deleteButton" FontSize="16" Content="Удалить" Click="deleteButton_Click"/>
+        </StackPanel>
+        <Button Content="Rooms" Click="RoomsBtn_Click" FontSize="16" HorizontalAlignment="Left" Margin="647,199,0,0" VerticalAlignment="Top"/>
+        <Button Content="History" Click="HistoryBtn_Click" FontSize="16" HorizontalAlignment="Left" Margin="647,295,0,0" VerticalAlignment="Top"/>
+        <Button Content="Hotels" Click="HotelsBtn_Click" FontSize="16" HorizontalAlignment="Left" Margin="647,93,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
