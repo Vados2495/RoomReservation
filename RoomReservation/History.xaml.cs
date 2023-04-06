@@ -108,5 +108,12 @@ namespace RoomReservation
             Rooms rooms = new Rooms();
             rooms.Show();
         }
+
+        private void UsersBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            Users users = new Users();
+            users.Show();
+        }
     }
 }

@@ -112,7 +112,7 @@ namespace RoomReservation
         private void UsersBtn_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-            User users = new User();
+            Users users = new Users();
             users.Show();
         }
     }
