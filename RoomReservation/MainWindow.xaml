@@ -9,6 +9,5 @@
     <Grid Background="Black">
         <Button Background="Orange" Content="User" FontSize="20" HorizontalAlignment="Center" Margin="0,124,0,0" VerticalAlignment="Top" Height="35" Width="92"/>
         <Button Background="Orange" Content="Admin" FontSize="20" HorizontalAlignment="Center" Margin="0,217,0,0" VerticalAlignment="Top" Height="35" Width="92"/>
-
     </Grid>
 </Window>
