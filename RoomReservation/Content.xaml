@@ -33,5 +33,6 @@
         </StackPanel>
         <Button Content="Rooms" Click="RoomsBtn_Click" FontSize="16" HorizontalAlignment="Left" Margin="541,120,0,0" VerticalAlignment="Top"/>
         <Button Content="History" Click="HistoryBtn_Click" FontSize="16" HorizontalAlignment="Left" Margin="541,0,0,0" VerticalAlignment="Center"/>
+        <Button Content="User" Click="UsersBtn_Click" FontSize="16" HorizontalAlignment="Left" Margin="541,296,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>

@@ -5,8 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RoomReservation"
         mc:Ignorable="d"
-        Title="History" Height="450" Width="800">
+        Title="History" Height="462" Width="787">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="20 10 20 10"/>
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Height" Value="30"/>
+        </Style>
+    </Window.Resources>
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <DataGrid AutoGenerateColumns="False" x:Name ="usersGrid" Margin="0,0,193,50">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Id}" Header="Id" Width="50"/>
+                <DataGridTextColumn Binding="{Binding Room_Id}" Header="Room_Id" Width="60"/>
+                <DataGridTextColumn Binding="{Binding Start_Date}" Header="Start_Date" Width="100"/>
+                <DataGridTextColumn Binding="{Binding End_Date}" Header="End_Date" Width="100"/>
+                <DataGridTextColumn Binding="{Binding Guest_Count}" Header="Guest_Count" Width="80"/>
+                <DataGridTextColumn Binding="{Binding Guest_Name}" Header="Guest_Name" Width="100"/>
+                <DataGridTextColumn Binding="{Binding is_cancelled}" Header="is_cancelled" Width="100"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" Margin="28,396,0,-2" Grid.RowSpan="2">
+            <Button x:Name="addButton" FontSize="16" Content="Добавить" Click="addButton_Click"/>
+            <Button x:Name="updateButton" FontSize="16" Content="Изменить" Click="updateButton_Click"/>
+            <Button x:Name="deleteButton" FontSize="16" Content="Удалить" Click="deleteButton_Click"/>
+        </StackPanel>
+        <Button Content="Rooms" Click="RoomsBtn_Click" FontSize="16" HorizontalAlignment="Left" Margin="635,98,0,0" VerticalAlignment="Top"/>
+        <Button Content="History" Click="HistoryBtn_Click" FontSize="16" HorizontalAlignment="Left" Margin="635,201,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>

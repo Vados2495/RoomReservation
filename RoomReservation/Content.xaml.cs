@@ -108,5 +108,12 @@ namespace RoomReservation
             History history = new History();
             history.Show();
         }
+
+        private void UsersBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            User users = new User();
+            users.Show();
+        }
     }
 }
