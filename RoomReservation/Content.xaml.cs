@@ -102,7 +102,7 @@ namespace RoomReservation
             rooms.Show();
         }
 
-        private void BookingsBtn_Click(object sender, RoutedEventArgs e)
+        private void HistoryBtn_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
             History history = new History();

@@ -95,14 +95,14 @@ namespace RoomReservation
             }
         }
 
-        private void RoomsBtn_Click(object sender, RoutedEventArgs e)
+        private void HotelsBtn_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-            Rooms rooms = new Rooms();
-            rooms.Show();
+            Content content = new Content();
+            content.Show();
         }
 
-        private void BookingsBtn_Click(object sender, RoutedEventArgs e)
+        private void HistoryBtn_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
             History history = new History();
