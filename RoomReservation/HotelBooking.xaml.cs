@@ -31,8 +31,6 @@ namespace RoomReservation
             hotels = new List<Hotel>();
             rooms = new List<Room>();
             InitHotels();
-
-            LoadHotels();
         }
         private void InitHotels()
         {
@@ -164,5 +162,19 @@ namespace RoomReservation
                 MessageBox.Show(ex.Message);
             }
         }
+    }
+    public class Hotel
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public int Rating { get; set; }
+    }
+
+    public class Room
+    {
+        public int Id { get; set; }
+        public int HotelId { get; set; }
+        public string Category { get; set; }
+        public int Capacity { get; set; }
     }
 }
