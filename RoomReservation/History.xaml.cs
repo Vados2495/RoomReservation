@@ -17,15 +17,15 @@ using System.Data;
 namespace RoomReservation
 {
     /// <summary>
-    /// Логика взаимодействия для Content.xaml
+    /// Логика взаимодействия для History.xaml
     /// </summary>
-    public partial class Content : Window
+    public partial class History : Window
     {
         private const string CONNECTION_STRING = "Data Source = DESKTOP-UBC2MQ9; Initial Catalog = Reservation; Trusted_Connection = True";
-        private const string SELECT_QUERY = "SELECT * FROM Hotels";
+        private const string SELECT_QUERY = "SELECT * FROM Bookings";
         private SqlDataAdapter dataAdapter;
         private DataTable dataTable;
-        public Content()
+        public History()
         {
             InitializeComponent();
             LoadData();
@@ -95,18 +95,18 @@ namespace RoomReservation
             }
         }
 
+        private void HotelsBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            Content content = new Content();
+            content.Show();
+        }
+
         private void RoomsBtn_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
             Rooms rooms = new Rooms();
             rooms.Show();
-        }
-
-        private void HistoryBtn_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-            History history = new History();
-            history.Show();
         }
 
         private void UsersBtn_Click(object sender, RoutedEventArgs e)

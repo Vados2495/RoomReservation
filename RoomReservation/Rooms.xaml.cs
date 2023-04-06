@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Data.SqlClient;
+using System.Data;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -12,20 +13,19 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using System.Data;
 
 namespace RoomReservation
 {
     /// <summary>
-    /// Логика взаимодействия для Content.xaml
+    /// Логика взаимодействия для Rooms.xaml
     /// </summary>
-    public partial class Content : Window
+    public partial class Rooms : Window
     {
         private const string CONNECTION_STRING = "Data Source = DESKTOP-UBC2MQ9; Initial Catalog = Reservation; Trusted_Connection = True";
-        private const string SELECT_QUERY = "SELECT * FROM Hotels";
+        private const string SELECT_QUERY = "SELECT * FROM Rooms";
         private SqlDataAdapter dataAdapter;
         private DataTable dataTable;
-        public Content()
+        public Rooms()
         {
             InitializeComponent();
             LoadData();
@@ -95,11 +95,11 @@ namespace RoomReservation
             }
         }
 
-        private void RoomsBtn_Click(object sender, RoutedEventArgs e)
+        private void HotelsBtn_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-            Rooms rooms = new Rooms();
-            rooms.Show();
+            Content content = new Content();
+            content.Show();
         }
 
         private void HistoryBtn_Click(object sender, RoutedEventArgs e)

@@ -17,15 +17,15 @@ using System.Data;
 namespace RoomReservation
 {
     /// <summary>
-    /// Логика взаимодействия для Content.xaml
+    /// Логика взаимодействия для Users.xaml
     /// </summary>
-    public partial class Content : Window
+    public partial class Users : Window
     {
-        private const string CONNECTION_STRING = "Data Source = DESKTOP-UBC2MQ9; Initial Catalog = Reservation; Trusted_Connection = True";
-        private const string SELECT_QUERY = "SELECT * FROM Hotels";
+        private const string CONNECTION_STRING = "Data Source = DESKTOP-UBC2MQ9; Initial Catalog = Account; Trusted_Connection = True";
+        private const string SELECT_QUERY = "SELECT * FROM User";
         private SqlDataAdapter dataAdapter;
         private DataTable dataTable;
-        public Content()
+        public Users()
         {
             InitializeComponent();
             LoadData();
@@ -55,19 +55,6 @@ namespace RoomReservation
             dataTable.Rows.Add(newRow);
         }
 
-        private void updateButton_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                dataAdapter.Update(dataTable);
-                LoadData();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Failed to update data: {ex.Message}");
-            }
-        }
-
         private void deleteButton_Click(object sender, RoutedEventArgs e)
         {
             if (usersGrid.SelectedItems != null && usersGrid.SelectedItems.Count > 0)
@@ -95,6 +82,13 @@ namespace RoomReservation
             }
         }
 
+        private void HotelsBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            Content content = new Content();
+            content.Show();
+        }
+
         private void RoomsBtn_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -107,13 +101,6 @@ namespace RoomReservation
             this.Close();
             History history = new History();
             history.Show();
-        }
-
-        private void UsersBtn_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-            Users users = new Users();
-            users.Show();
         }
     }
 }

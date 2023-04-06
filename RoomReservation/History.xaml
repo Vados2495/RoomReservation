@@ -1,11 +1,11 @@
-﻿<Window x:Class="RoomReservation.Content"
+﻿<Window x:Class="RoomReservation.History"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RoomReservation"
         mc:Ignorable="d"
-        Title="Hotels" Height="462" Width="684">
+        Title="History" Height="462" Width="787">
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="Margin" Value="20 10 20 10"/>
@@ -18,12 +18,15 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <DataGrid AutoGenerateColumns="False" x:Name ="usersGrid" Margin="0,0,207,50">
+        <DataGrid AutoGenerateColumns="False" x:Name ="usersGrid" Margin="0,0,193,50">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Id}" Header="Id" Width="50"/>
-                <DataGridTextColumn Binding="{Binding Name}" Header="Name" Width="*"/>
-                <DataGridTextColumn Binding="{Binding Rating}" Header="Rating" Width="100"/>
-                <DataGridTextColumn Binding="{Binding is_available}" Header="is_available" Width="100"/>
+                <DataGridTextColumn Binding="{Binding Room_Id}" Header="Room_Id" Width="60"/>
+                <DataGridTextColumn Binding="{Binding Start_Date}" Header="Start_Date" Width="100"/>
+                <DataGridTextColumn Binding="{Binding End_Date}" Header="End_Date" Width="100"/>
+                <DataGridTextColumn Binding="{Binding Guest_Count}" Header="Guest_Count" Width="80"/>
+                <DataGridTextColumn Binding="{Binding Guest_Name}" Header="Guest_Name" Width="100"/>
+                <DataGridTextColumn Binding="{Binding is_cancelled}" Header="is_cancelled" Width="100"/>
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" Margin="28,396,0,-2" Grid.RowSpan="2">
@@ -31,8 +34,8 @@
             <Button x:Name="updateButton" FontSize="16" Content="Изменить" Click="updateButton_Click"/>
             <Button x:Name="deleteButton" FontSize="16" Content="Удалить" Click="deleteButton_Click"/>
         </StackPanel>
-        <Button Content="Rooms" Click="RoomsBtn_Click" FontSize="16" HorizontalAlignment="Left" Margin="541,120,0,0" VerticalAlignment="Top"/>
-        <Button Content="History" Click="HistoryBtn_Click" FontSize="16" HorizontalAlignment="Left" Margin="541,0,0,0" VerticalAlignment="Center"/>
-        <Button Content="Users" Click="UsersBtn_Click" FontSize="16" HorizontalAlignment="Left" Margin="541,296,0,0" VerticalAlignment="Top"/>
+        <Button Content="Rooms" Click="RoomsBtn_Click" FontSize="16" HorizontalAlignment="Left" Margin="635,198,0,0" VerticalAlignment="Top"/>
+        <Button Content="Users" Click="UsersBtn_Click" FontSize="16" HorizontalAlignment="Left" Margin="635,295,0,0" VerticalAlignment="Top"/>
+        <Button Content="Hotels" Click="HotelsBtn_Click" FontSize="16" HorizontalAlignment="Left" Margin="635,93,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>

@@ -1,11 +1,11 @@
-﻿<Window x:Class="RoomReservation.Content"
+﻿<Window x:Class="RoomReservation.Users"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RoomReservation"
         mc:Ignorable="d"
-        Title="Hotels" Height="462" Width="684">
+        Title="Users" Height="464" Width="807">
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="Margin" Value="20 10 20 10"/>
@@ -18,21 +18,21 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <DataGrid AutoGenerateColumns="False" x:Name ="usersGrid" Margin="0,0,207,50">
+        <DataGrid AutoGenerateColumns="False" x:Name ="usersGrid" Margin="0,0,218,50">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Id}" Header="Id" Width="50"/>
-                <DataGridTextColumn Binding="{Binding Name}" Header="Name" Width="*"/>
-                <DataGridTextColumn Binding="{Binding Rating}" Header="Rating" Width="100"/>
-                <DataGridTextColumn Binding="{Binding is_available}" Header="is_available" Width="100"/>
+                <DataGridTextColumn Binding="{Binding Username}" Header="Username" Width="*"/>
+                <DataGridTextColumn Binding="{Binding Email}" Header="Email" Width="100"/>
+                <DataGridTextColumn Binding="{Binding Password}" Header="Password" Width="*"/>
+                <DataGridTextColumn Binding="{Binding ConfirmPassword}" Header="ConfirmPassword" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
-        <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" Margin="28,396,0,-2" Grid.RowSpan="2">
+        <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" Margin="139,398,0,-4" Grid.RowSpan="2">
             <Button x:Name="addButton" FontSize="16" Content="Добавить" Click="addButton_Click"/>
-            <Button x:Name="updateButton" FontSize="16" Content="Изменить" Click="updateButton_Click"/>
             <Button x:Name="deleteButton" FontSize="16" Content="Удалить" Click="deleteButton_Click"/>
         </StackPanel>
-        <Button Content="Rooms" Click="RoomsBtn_Click" FontSize="16" HorizontalAlignment="Left" Margin="541,120,0,0" VerticalAlignment="Top"/>
-        <Button Content="History" Click="HistoryBtn_Click" FontSize="16" HorizontalAlignment="Left" Margin="541,0,0,0" VerticalAlignment="Center"/>
-        <Button Content="Users" Click="UsersBtn_Click" FontSize="16" HorizontalAlignment="Left" Margin="541,296,0,0" VerticalAlignment="Top"/>
+        <Button Content="Rooms" Click="RoomsBtn_Click" FontSize="16" HorizontalAlignment="Left" Margin="647,199,0,0" VerticalAlignment="Top"/>
+        <Button Content="History" Click="HistoryBtn_Click" FontSize="16" HorizontalAlignment="Left" Margin="647,295,0,0" VerticalAlignment="Top"/>
+        <Button Content="Hotels" Click="HotelsBtn_Click" FontSize="16" HorizontalAlignment="Left" Margin="647,93,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>

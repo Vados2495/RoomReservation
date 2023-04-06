@@ -63,10 +63,8 @@ namespace RoomReservation
                 command.Parameters.AddWithValue("@ConfirmPassword", confirmPassword);
                 command.ExecuteNonQuery();
             }
-            Client chat = new Client();
-            chat.Show();
-            Server chat2 = new Server();
-            chat2.Show();
+            HotelBooking hotel = new HotelBooking();
+            hotel.Show();
         }
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
