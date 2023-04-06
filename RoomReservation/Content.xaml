@@ -31,7 +31,7 @@
             <Button x:Name="updateButton" FontSize="16" Content="Изменить" Click="updateButton_Click"/>
             <Button x:Name="deleteButton" FontSize="16" Content="Удалить" Click="deleteButton_Click"/>
         </StackPanel>
-        <Button Content="Rooms" FontSize="16" HorizontalAlignment="Left" Margin="541,120,0,0" VerticalAlignment="Top"/>
-        <Button Content="Bookings" FontSize="16" HorizontalAlignment="Left" Margin="541,223,0,0" VerticalAlignment="Top"/>
+        <Button Content="Rooms" Click="RoomsBtn_Click" FontSize="16" HorizontalAlignment="Left" Margin="541,120,0,0" VerticalAlignment="Top"/>
+        <Button Content="Bookings" Click="BookingsBtn_Click" FontSize="16" HorizontalAlignment="Left" Margin="541,223,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
