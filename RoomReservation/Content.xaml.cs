@@ -21,7 +21,7 @@ namespace RoomReservation
     /// </summary>
     public partial class Content : Window
     {
-        private const string CONNECTION_STRING = "Data Source = DESKTOP-UBC2MQ9; Initial Catalog = RoomReserv; Trusted_Connection = True";
+        private const string CONNECTION_STRING = "Data Source = DESKTOP-UBC2MQ9; Initial Catalog = Reservation; Trusted_Connection = True";
         private const string SELECT_QUERY = "SELECT * FROM Hotels";
         private SqlDataAdapter dataAdapter;
         private DataTable dataTable;
