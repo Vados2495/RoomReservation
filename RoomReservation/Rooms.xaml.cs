@@ -105,8 +105,8 @@ namespace RoomReservation
         private void BookingsBtn_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-            Bookings bookings = new Bookings();
-            bookings.Show();
+            History history = new History();
+            history.Show();
         }
     }
 }

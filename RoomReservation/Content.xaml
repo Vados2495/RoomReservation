@@ -32,7 +32,6 @@
             <Button x:Name="deleteButton" FontSize="16" Content="Удалить" Click="deleteButton_Click"/>
         </StackPanel>
         <Button Content="Rooms" Click="RoomsBtn_Click" FontSize="16" HorizontalAlignment="Left" Margin="541,120,0,0" VerticalAlignment="Top"/>
-        <Button Content="Bookings" Click="BookingsBtn_Click" FontSize="16" HorizontalAlignment="Left" Margin="541,223,0,0" VerticalAlignment="Top"/>
-        <Button Content="History" Click="HistoryBtn_Click" FontSize="16" HorizontalAlignment="Left" Margin="541,300,0,0" VerticalAlignment="Top"/>
+        <Button Content="History" Click="HistoryBtn_Click" FontSize="16" HorizontalAlignment="Left" Margin="541,0,0,0" VerticalAlignment="Center"/>
     </Grid>
 </Window>
