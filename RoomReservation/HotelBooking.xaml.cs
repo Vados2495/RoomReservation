@@ -34,62 +34,134 @@ namespace RoomReservation
 
             LoadHotels();
         }
-        private void LoadHotels()
+        private void InitHotels()
         {
             try
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    string query = "SELECT Id, Name, Rating FROM Hotels WHERE is_available = 1";
+                    string query = "SELECT * FROM Hotels WHERE is_available = 1";
                     SqlCommand command = new SqlCommand(query, connection);
                     SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
-                        int id = (int)reader["Id"];
-                        string name = reader["Name"].ToString();
-                        string rating = reader["Rating"].ToString();
-                        ComboBoxItem item = new ComboBoxItem();
-                        item.Content = name;
-                        item.Content = rating;
-                        item.Tag = id;
-                        hotelComboBox.Items.Add(item);
+                        Hotel hotel = new Hotel();
+                        hotel.Id = int.Parse(reader["Id"].ToString());
+                        hotel.Name = reader["Name"].ToString();
+                        hotel.Rating = int.Parse(reader["Rating"].ToString());
+                        hotels.Add(hotel);
                     }
                     reader.Close();
+                    connection.Close();
                 }
+
+                if (hotels.Count == 0)
+                {
+                    MessageBox.Show("There are no available hotels");
+                    return;
+                }
+
+                hotelComboBox.ItemsSource = hotels;
+                hotelComboBox.DisplayMemberPath = "Name";
+                hotelComboBox.SelectedValuePath = "Id";
+                hotelComboBox.SelectedIndex = 0;
+                selectedHotelId = hotels[0].Id;
+
+                InitRooms();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ошибка загрузки отелей: " + ex.Message);
+                MessageBox.Show(ex.Message);
             }
         }
 
-        private void LoadRooms(int hotelId)
+        private void InitRooms()
         {
+            rooms.Clear();
             try
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    string query = "SELECT Id, Number, Category, Price FROM Rooms WHERE HotelId = @HotelId AND is_available = 1";
+                    string query = $"SELECT * FROM Rooms WHERE Hotel_id = {selectedHotelId} AND is_available = 1";
                     SqlCommand command = new SqlCommand(query, connection);
-                    command.Parameters.AddWithValue("@HotelId", hotelId);
                     SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
-                        int id = (int)reader["Id"];
-                        int number = (int)reader["Number"];
-                        string category = reader["Category"].ToString();
-                        decimal price = (decimal)reader["Price"];
-                        Room room = new Room(id, number, category, price);
-                        roomComboBox.Items.Add(room);
+                        Room room = new Room();
+                        room.Id = int.Parse(reader["Id"].ToString());
+                        room.HotelId = int.Parse(reader["Hotel_id"].ToString());
+                        room.Category = reader["Category"].ToString();
+                        room.Capacity = int.Parse(reader["capacity"].ToString());
+                        rooms.Add(room);
                     }
                     reader.Close();
+                    connection.Close();
+                }
+
+                if (rooms.Count == 0)
+                {
+                    MessageBox.Show("There are no available rooms");
+                    return;
+                }
+
+                roomsComboBox.ItemsSource = rooms;
+                roomsComboBox.DisplayMemberPath = "Category";
+                roomsComboBox.SelectedValuePath = "Id";
+                roomsComboBox.SelectedIndex = 0;
+                selectedRoomId = rooms[0].Id;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void HotelComboBox_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            selectedHotelId = (int)hotelComboBox.SelectedValue;
+            InitRooms();
+        }
+
+        private void BookButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                DateTime startDate = startDatePicker.SelectedDate ?? DateTime.Now;
+                DateTime endDate = endDatePicker.SelectedDate ?? DateTime.Now.AddDays(1);
+                int guestCount = int.Parse(guestCountTextBox.Text);
+                string guestName = guestNameTextBox.Text;
+                if (guestCount < 1 || guestCount > 5)
+                {
+                    MessageBox.Show("Guest count should be between 1 and 5");
+                    return;
+                }
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string query = $"INSERT INTO Bookings(Room_id, Start_date, End_date, Guest_count, Guest_name, is_cancelled) " +
+                        $"VALUES({selectedRoomId}, '{startDate.ToString("yyyy-MM-dd")}', '{endDate.ToString("yyyy-MM-dd")}', {guestCount}, '{guestName}', 0)";
+                    SqlCommand command = new SqlCommand(query, connection);
+                    int result = command.ExecuteNonQuery();
+                    if (result == 1)
+                    {
+                        query = $"UPDATE Rooms SET is_available = 0 WHERE Id = {selectedRoomId}";
+                        command = new SqlCommand(query, connection);
+                        command.ExecuteNonQuery();
+                        MessageBox.Show("Booking successful");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Booking failed");
+                    }
+                    connection.Close();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ошибка загрузки номеров: " + ex.Message);
+                MessageBox.Show(ex.Message);
             }
         }
     }
