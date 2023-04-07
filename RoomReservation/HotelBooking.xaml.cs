@@ -162,6 +162,11 @@ namespace RoomReservation
                 MessageBox.Show(ex.Message);
             }
         }
+        private void EditBookingButton_Click(object sender, RoutedEventArgs e)
+        {
+            BookingUpdate bookingUpdate = new BookingUpdate();
+            bookingUpdate.Show();
+        }
     }
     public class Hotel
     {
