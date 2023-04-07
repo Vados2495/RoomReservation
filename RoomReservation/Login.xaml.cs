@@ -34,7 +34,7 @@ namespace RoomReservation
                 try
                 {
                     connection.Open();
-                    string query = $"SELECT COUNT(*) FROM User WHERE Username='{UsernameTextBox.Text}' AND password='{passwordTextBox.Password}'";
+                    string query = $"SELECT COUNT(*) FROM [User] WHERE Username='{UsernameTextBox.Text}' AND password='{passwordTextBox.Password}'";
                     SqlCommand command = new SqlCommand(query, connection);
                     int count = (int)command.ExecuteScalar();
 
