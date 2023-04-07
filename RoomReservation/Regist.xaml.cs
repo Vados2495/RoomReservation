@@ -36,7 +36,7 @@ namespace RoomReservation
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                string query = "INSERT INTO User (Username, Email, Password, ConfirmPassword) VALUES (@Username, @Email, @Password, @ConfirmPassword)";
+                string query = "INSERT INTO [User] (Username, Email, Password, ConfirmPassword) VALUES (@Username, @Email, @Password, @ConfirmPassword)";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@Username", username);
                 command.Parameters.AddWithValue("@Email", email);

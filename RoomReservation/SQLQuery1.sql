@@ -1,0 +1,16 @@
+USE Account
+GO
+
+CREATE TABLE [User] (
+    [Id] INT PRIMARY KEY IDENTITY(1,1),
+    [Username] NVARCHAR(50) NOT NULL,
+    [Email] NVARCHAR(50) NOT NULL,
+    [Password] NVARCHAR(100) NOT NULL,
+	[ConfirmPassword] NVARCHAR(100) NOT NULL
+)
+
+CREATE TABLE [Admin] (
+    [Id] INT PRIMARY KEY IDENTITY(1,1),
+    [Login] NVARCHAR(50) NOT NULL,
+    [Password] NVARCHAR(100) NOT NULL,
+)
