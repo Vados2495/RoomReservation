@@ -22,7 +22,7 @@ namespace RoomReservation
     {
         private List<Hotel> hotels;
         private List<Room> rooms;
-        private string connectionString = "Data Source = DESKTOP-UBC2MQ9; Initial Catalog = RoomReserv; Trusted_Connection = True";
+        private string connectionString = "Data Source = DESKTOP-UBC2MQ9; Initial Catalog = Reservation; Trusted_Connection = True";
         private int selectedHotelId;
         private int selectedRoomId;
         public HotelBooking()
