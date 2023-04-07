@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RoomReservation"
         mc:Ignorable="d"
-        Title="HotelBooking" Height="484" Width="800">
+        Title="HotelBooking" Height="492" Width="799">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -39,9 +39,11 @@
         <Label Grid.Row="5" FontSize="16" Grid.Column="0" Margin="5" Content="Guest Count:"/>
         <TextBox Grid.Row="5" Grid.Column="1" FontSize="16" Margin="5" Name="guestCountTextBox"/>
 
-        <Label Grid.Row="6" FontSize="16" Grid.Column="0" Margin="5" Content="Guest Name:"/>
+        <Label Grid.Row="6" FontSize="16" Grid.Column="0" Margin="5,5,5,187" Content="Guest Name:"/>
         <TextBox Grid.Row="6" FontSize="16" Grid.Column="1" Margin="5,5,5,187" Name="guestNameTextBox"/>
 
-        <Button Grid.Row="6" Grid.Column="1" FontSize="20" Margin="232,83,314,83" Content="Booking" Click="BookButton_Click"/>
+        <Button Grid.Row="6" Grid.Column="1" FontSize="20" Margin="243,74,302,91" Content="Booking" Click="BookButton_Click"/>
+        
+        <Button Grid.Column="1" Content="Edit" Click="EditBookingButton_Click" FontSize="20" HorizontalAlignment="Left" Margin="499,114,0,0" Grid.Row="6" VerticalAlignment="Top" Height="41" Width="79"/>
     </Grid>
 </Window>

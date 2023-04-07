@@ -100,6 +100,9 @@
     <Compile Include="AdminAuth.xaml.cs">
       <DependentUpon>AdminAuth.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BookingUpdate.xaml.cs">
+      <DependentUpon>BookingUpdate.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Content.xaml.cs">
       <DependentUpon>Content.xaml</DependentUpon>
     </Compile>
@@ -122,6 +125,10 @@
       <DependentUpon>Users.xaml</DependentUpon>
     </Compile>
     <Page Include="AdminAuth.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BookingUpdate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
