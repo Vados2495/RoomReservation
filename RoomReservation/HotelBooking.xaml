@@ -6,6 +6,53 @@
         xmlns:local="clr-namespace:RoomReservation"
         mc:Ignorable="d"
         Title="HotelBooking" Height="492" Width="799">
+    <Window.Resources>
+        <Style TargetType="Label">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="Black"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="Indigo" ShadowDepth="0" BlurRadius="15"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="Black" ShadowDepth="0" BlurRadius="15"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="DatePicker">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="Black" ShadowDepth="0" BlurRadius="15"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Foreground" Value="Indigo"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="Indigo" ShadowDepth="0" BlurRadius="15"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="Indigo"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="Indigo" ShadowDepth="0" BlurRadius="15"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -21,35 +68,59 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Label Grid.Row="0" FontSize="16" Grid.Column="0" Margin="5" Content="Hotels:"/>
-        <ComboBox Grid.Row="0" Grid.Column="1" FontSize="16" Margin="5" Name="hotelComboBox"/>
+        <Label Grid.Row="0" FontSize="16" Grid.Column="0" Content="Hotels:"/>
+        <ComboBox Grid.Row="0" FontSize="16" Grid.Column="1" Name="hotelComboBox"/>
 
-        <Label Grid.Row="1" FontSize="16" Grid.Column="0" Margin="5" Content="Room Category:"/>
-        <ComboBox Grid.Row="1" Grid.Column="1" FontSize="16" Margin="5" Name="categoryComboBox"/>
+        <Label Grid.Row="1" FontSize="16" Grid.Column="0" Content="Room Category:"/>
+        <ComboBox Grid.Row="1" FontSize="16" Grid.Column="1" Name="categoryComboBox"/>
 
-        <Label Grid.Row="2" FontSize="16" Grid.Column="0" Margin="5" Content="Available Rooms:"/>
-        <ComboBox Grid.Row="2" Grid.Column="1" FontSize="16" Margin="5" Name="roomsComboBox"/>
+        <Label Grid.Row="2" FontSize="16" Grid.Column="0" Content="Available Rooms:"/>
+        <ComboBox Grid.Row="2" FontSize="16" Grid.Column="1" Name="roomsComboBox"/>
 
-        <Label Grid.Row="3" FontSize="16" Grid.Column="0" Margin="5" Content="Start Date:"/>
-        <DatePicker Grid.Row="3" FontSize="16" Grid.Column="1" Margin="5" Name="startDatePicker"/>
+        <Label Grid.Row="3" FontSize="16" Grid.Column="0" Content="Start Date:"/>
+        <DatePicker Grid.Row="3" FontSize="16" Grid.Column="1" Name="startDatePicker"/>
 
-        <Label Grid.Row="4" FontSize="16" Grid.Column="0" Margin="5" Content="End Date:"/>
-        <DatePicker Grid.Row="4" FontSize="16" Grid.Column="1" Margin="5" Name="endDatePicker"/>
+        <Label Grid.Row="4" FontSize="16" Grid.Column="0" Content="End Date:"/>
+        <DatePicker Grid.Row="4" FontSize="16" Grid.Column="1" Name="endDatePicker"/>
 
-        <Label Grid.Row="5" FontSize="16" Grid.Column="0" Margin="5" Content="Guest Count:"/>
-        <TextBox Grid.Row="5" Grid.Column="1" FontSize="16" Margin="5" Name="guestCountTextBox"/>
-
-        <Label Grid.Row="6" FontSize="16" Grid.Column="0" Margin="5,5,5,187" Content="Guest Name:"/>
-        <ComboBox Grid.Row="5" Grid.Column="1" FontSize="16" Margin="5" Name="guestCountComboBox">
+        <Label Grid.Row="5" FontSize="16" Grid.Column="0" Content="Guest Count:"/>
+        <ComboBox Grid.Row="5" FontSize="16" Grid.Column="1" Name="guestCountComboBox" SelectedIndex="0">
             <ComboBoxItem Content="1"/>
             <ComboBoxItem Content="2"/>
             <ComboBoxItem Content="3"/>
             <ComboBoxItem Content="4"/>
         </ComboBox>
 
-        <Button Grid.Row="6" Grid.Column="1" FontSize="20" Margin="243,74,302,91" Content="Booking" Click="BookButton_Click"/>
-        
-        <Button Grid.Column="1" Content="Edit" Click="EditBookingButton_Click" FontSize="20" HorizontalAlignment="Left" Margin="499,114,0,0" Grid.Row="6" VerticalAlignment="Top" Height="41" Width="79"/>
-        <Button Grid.Column="1" Content="Sign Out" Click="SignOutButton_Click" FontSize="20" HorizontalAlignment="Left" Margin="300,163,0,0" Grid.Row="6" VerticalAlignment="Top" Height="41" Width="87"/>
+        <Label Grid.Row="6" FontSize="16" Grid.Column="0" Content="Guest Name:"/>
+        <TextBox Grid.Row="6" FontSize="16" Grid.Column="1" Name="guestNameTextBox" Margin="0,0,0,258"/>
+
+        <Button Grid.Row="6" FontSize="26" Grid.Column="1" Content="Booking" Click="BookButton_Click" Margin="88,78,446,147">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="Indigo" BorderBrush="Black" BorderThickness="1" CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button Grid.Column="1" FontSize="26" Content="Edit" Click="EditBookingButton_Click" HorizontalAlignment="Left" Margin="389,81,0,0" Grid.Row="6" VerticalAlignment="Top" Height="56" Width="84">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="Indigo" BorderBrush="Black" BorderThickness="1" CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Grid.Column="1" FontSize="26" Content="Sign out" Click="SignOutButton_Click" HorizontalAlignment="Left" Margin="248,203,0,0" Grid.Row="6" VerticalAlignment="Top" Height="56" Width="117">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="Indigo" BorderBrush="Black" BorderThickness="1" CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
     </Grid>
 </Window>
