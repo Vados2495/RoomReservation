@@ -128,13 +128,8 @@ namespace RoomReservation
             {
                 DateTime startDate = startDatePicker.SelectedDate ?? DateTime.Now;
                 DateTime endDate = endDatePicker.SelectedDate ?? DateTime.Now.AddDays(1);
-                int guestCount = int.Parse(guestCountTextBox.Text);
+                int guestCount = int.Parse(((ComboBoxItem)guestCountComboBox.SelectedItem).Content.ToString());
                 string guestName = guestNameTextBox.Text;
-                if (guestCount < 1 || guestCount > 5)
-                {
-                    MessageBox.Show("Guest count should be between 1 and 5");
-                    return;
-                }
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
