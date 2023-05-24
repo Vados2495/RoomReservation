@@ -50,5 +50,6 @@
         <Button Grid.Row="6" Grid.Column="1" FontSize="20" Margin="243,74,302,91" Content="Booking" Click="BookButton_Click"/>
         
         <Button Grid.Column="1" Content="Edit" Click="EditBookingButton_Click" FontSize="20" HorizontalAlignment="Left" Margin="499,114,0,0" Grid.Row="6" VerticalAlignment="Top" Height="41" Width="79"/>
+        <Button Grid.Column="1" Content="Sign Out" Click="SignOutButton_Click" FontSize="20" HorizontalAlignment="Left" Margin="300,163,0,0" Grid.Row="6" VerticalAlignment="Top" Height="41" Width="87"/>
     </Grid>
 </Window>

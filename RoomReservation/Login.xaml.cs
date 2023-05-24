@@ -55,5 +55,12 @@ namespace RoomReservation
                 }
             }
         }
+
+        private void RegButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            Regist regist = new Regist();
+            regist.Show();
+        }
     }
 }
