@@ -40,7 +40,12 @@
         <TextBox Grid.Row="5" Grid.Column="1" FontSize="16" Margin="5" Name="guestCountTextBox"/>
 
         <Label Grid.Row="6" FontSize="16" Grid.Column="0" Margin="5,5,5,187" Content="Guest Name:"/>
-        <TextBox Grid.Row="6" FontSize="16" Grid.Column="1" Margin="5,5,5,187" Name="guestNameTextBox"/>
+        <ComboBox Grid.Row="5" Grid.Column="1" FontSize="16" Margin="5" Name="guestCountComboBox">
+            <ComboBoxItem Content="1"/>
+            <ComboBoxItem Content="2"/>
+            <ComboBoxItem Content="3"/>
+            <ComboBoxItem Content="4"/>
+        </ComboBox>
 
         <Button Grid.Row="6" Grid.Column="1" FontSize="20" Margin="243,74,302,91" Content="Booking" Click="BookButton_Click"/>
         
