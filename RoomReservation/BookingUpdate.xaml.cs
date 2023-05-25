@@ -21,7 +21,7 @@ namespace RoomReservation
     public partial class BookingUpdate : Window
     {
         private string connectionString = "Data Source = DESKTOP-UBC2MQ9; Initial Catalog = Reservation; Trusted_Connection = True";
-        private int bookingId;
+        private int bookingId = 0;
         public BookingUpdate()
         {
             InitializeComponent();

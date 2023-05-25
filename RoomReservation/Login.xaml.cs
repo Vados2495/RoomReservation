@@ -12,6 +12,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using RoomReservation;
+using RoomReservation.View;
 
 namespace RoomReservation
 {
@@ -40,8 +42,8 @@ namespace RoomReservation
 
                     if (count > 0)
                     {
-                        MainWindow mainWindow = new MainWindow();
-                        mainWindow.Show();
+                        HotelBooking hotel = new HotelBooking();
+                        hotel.Show();
                         this.Close();
                     }
                     else
@@ -58,9 +60,9 @@ namespace RoomReservation
 
         private void RegButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
             Regist regist = new Regist();
             regist.Show();
+            this.Close();
         }
     }
 }

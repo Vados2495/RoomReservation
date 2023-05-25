@@ -51,23 +51,23 @@ namespace RoomReservation
 
         private void HotelsBtn_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
             Content content = new Content();
             content.Show();
+            this.Close();
         }
 
         private void RoomsBtn_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
             Rooms rooms = new Rooms();
             rooms.Show();
+            this.Close();
         }
 
         private void UsersBtn_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
             Users users = new Users();
             users.Show();
+            this.Close();
         }
     }
 }

@@ -97,23 +97,23 @@ namespace RoomReservation
 
         private void RoomsBtn_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
             Rooms rooms = new Rooms();
             rooms.Show();
+            this.Close();
         }
 
         private void HistoryBtn_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
             History history = new History();
             history.Show();
+            this.Close();
         }
 
         private void UsersBtn_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
             Users users = new Users();
             users.Show();
+            this.Close();
         }
     }
 }
