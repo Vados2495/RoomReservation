@@ -1,11 +1,11 @@
-﻿<Window x:Class="RoomReservation.BookingUpdate"
+﻿<Window x:Class="RoomReservation.View.HotelBooking"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:RoomReservation"
+        xmlns:local="clr-namespace:RoomReservation.View"
         mc:Ignorable="d"
-        Title="BookingUpdate" Height="450" Width="800">
+        Title="HotelBooking" Height="492" Width="799">
     <Window.Resources>
         <Style TargetType="Label">
             <Setter Property="Foreground" Value="White"/>
@@ -67,19 +67,34 @@
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Label Grid.Row="0" FontSize="16" Grid.Column="0" Content="Room Category:"/>
-        <ComboBox Grid.Row="0" Grid.Column="1" x:Name="categoryComboBox" Width="200" Margin="5" FontSize="16"/>
-        <Label Grid.Row="1" FontSize="16" Grid.Column="0" Content="Start Date:"/>
-        <DatePicker Grid.Row="1" FontSize="16" Grid.Column="1" x:Name="startDatePicker" Width="200" Margin="5"/>
-        <Label Grid.Row="2" FontSize="16" Grid.Column="0" Content="End Date:"/>
-        <DatePicker Grid.Row="2" FontSize="16" Grid.Column="1" x:Name="endDatePicker" Width="200" Margin="5"/>
-        <Label Grid.Row="3" FontSize="16" Grid.Column="0" Content="Guest Count:"/>
-        <TextBox Grid.Row="3" FontSize="16" Grid.Column="1" x:Name="guestCountTextBox" Width="200" Margin="5"/>
-        <Label Grid.Row="4" FontSize="16" Grid.Column="0" Content="Guest Name:"/>
-        <TextBox Grid.Row="4" FontSize="16" Grid.Column="1" x:Name="guestNameTextBox" Width="200" Margin="5"/>
-        <Label Grid.Row="5" FontSize="16" Grid.Column="0" Content="Cancelled:" Grid.RowSpan="2"/>
-        <CheckBox Grid.Row="4" FontSize="16" x:Name="isCancelledCheckBox" Margin="5,33,0,217" Grid.Column="1" Grid.RowSpan="3"/>
-        <Button Grid.Row="6" Grid.Column="1" FontSize="20" x:Name="saveButton" Content="Save" Margin="125,64,460,137" Click="SaveButton_Click">
+
+        <Label Grid.Row="0" FontSize="16" Grid.Column="0" Content="Hotels:"/>
+        <ComboBox Grid.Row="0" FontSize="16" Grid.Column="1" Name="hotelComboBox"/>
+
+        <Label Grid.Row="1" FontSize="16" Grid.Column="0" Content="Room Category:"/>
+        <ComboBox Grid.Row="1" FontSize="16" Grid.Column="1" Name="categoryComboBox"/>
+
+        <Label Grid.Row="2" FontSize="16" Grid.Column="0" Content="Available Rooms:"/>
+        <ComboBox Grid.Row="2" FontSize="16" Grid.Column="1" Name="roomsComboBox"/>
+
+        <Label Grid.Row="3" FontSize="16" Grid.Column="0" Content="Start Date:"/>
+        <DatePicker Grid.Row="3" FontSize="16" Grid.Column="1" Name="startDatePicker"/>
+
+        <Label Grid.Row="4" FontSize="16" Grid.Column="0" Content="End Date:"/>
+        <DatePicker Grid.Row="4" FontSize="16" Grid.Column="1" Name="endDatePicker"/>
+
+        <Label Grid.Row="5" FontSize="16" Grid.Column="0" Content="Guest Count:"/>
+        <ComboBox Grid.Row="5" FontSize="16" Grid.Column="1" Name="guestCountComboBox" SelectedIndex="0">
+            <ComboBoxItem Content="1"/>
+            <ComboBoxItem Content="2"/>
+            <ComboBoxItem Content="3"/>
+            <ComboBoxItem Content="4"/>
+        </ComboBox>
+
+        <Label Grid.Row="6" FontSize="16" Grid.Column="0" Content="Guest Name:"/>
+        <TextBox Grid.Row="6" FontSize="16" Grid.Column="1" Name="guestNameTextBox" Margin="0,0,0,258"/>
+
+        <Button Grid.Row="6" FontSize="26" Grid.Column="1" Content="Booking" Click="BookButton_Click" Margin="88,78,446,147">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border Background="Indigo" BorderBrush="Black" BorderThickness="1" CornerRadius="10">
@@ -88,9 +103,19 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button Grid.Row="6" Grid.Column="1" FontSize="20" x:Name="cancelButton" Content="Cancel" Margin="339,64,248,137" Click="CancelButton_Click">
+
+        <Button Grid.Column="1" FontSize="26" Content="Edit" Click="EditBookingButton_Click" HorizontalAlignment="Left" Margin="389,81,0,0" Grid.Row="6" VerticalAlignment="Top" Height="56" Width="84">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
+                    <Border Background="Indigo" BorderBrush="Black" BorderThickness="1" CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Grid.Column="1" FontSize="26" Content="Sign out" Click="SignOutButton_Click" HorizontalAlignment="Left" Margin="248,203,0,0" Grid.Row="6" VerticalAlignment="Top" Height="56" Width="117">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
                     <Border Background="Indigo" BorderBrush="Black" BorderThickness="1" CornerRadius="10">
                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Border>
