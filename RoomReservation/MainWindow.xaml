@@ -6,24 +6,29 @@
         xmlns:local="clr-namespace:RoomReservation"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="396">
+    <Window.Resources>
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" Background="Indigo" BorderBrush="Black" BorderThickness="1" CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="White" />
+                                <Setter Property="Foreground" Value="Black" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid Background="#A9A9A9">
-        <Button Content="User" FontSize="20" Click="UserBtn_Click" HorizontalAlignment="Center" Margin="0,170,0,0" VerticalAlignment="Top" Height="47" Width="92" Foreground="White">
-            <Button.Template>
-                <ControlTemplate TargetType="Button">
-                    <Border Background="Indigo" BorderBrush="Black" BorderThickness="1" CornerRadius="10">
-                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    </Border>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
-        <Button Content="Admin" FontSize="20" Click="AdminBtn_Click" HorizontalAlignment="Center" Margin="0,260,0,0" VerticalAlignment="Top" Height="45" Width="92" Foreground="White">
-            <Button.Template>
-                <ControlTemplate TargetType="Button">
-                    <Border Background="Indigo" BorderBrush="Black" BorderThickness="1" CornerRadius="10">
-                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    </Border>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
+        <Button Content="User" Style="{StaticResource ButtonStyle}" Click="UserBtn_Click" HorizontalAlignment="Center" Margin="0,170,0,0" VerticalAlignment="Top" Height="47" Width="92" />
+        <Button Content="Admin" Style="{StaticResource ButtonStyle}" Click="AdminBtn_Click" HorizontalAlignment="Center" Margin="0,260,0,0" VerticalAlignment="Top" Height="45" Width="92" />
     </Grid>
 </Window>
