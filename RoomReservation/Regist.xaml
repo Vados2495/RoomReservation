@@ -28,6 +28,7 @@
                                         <DropShadowEffect Color="#FF6A5ACD" BlurRadius="20" ShadowDepth="0" />
                                     </Setter.Value>
                                 </Setter>
+                                <Setter Property="Foreground" Value="Black" />
                             </Trigger>
                             <Trigger Property="IsPressed" Value="True">
                                 <Setter Property="Effect">
@@ -35,6 +36,9 @@
                                         <DropShadowEffect Color="#FF6A5ACD" BlurRadius="10" ShadowDepth="0" />
                                     </Setter.Value>
                                 </Setter>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="False">
+                                <Setter Property="Foreground" Value="White" />
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
