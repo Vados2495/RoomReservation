@@ -23,7 +23,10 @@ namespace RoomReservation
         public AdminAuth()
         {
             InitializeComponent();
+            UsernameTextBox.PreviewKeyDown += TextBox_PreviewKeyDown;
+            passwordTextBox.PreviewKeyDown += TextBox_PreviewKeyDown;
         }
+
         private void SignInBtn_Click(object sender, RoutedEventArgs e)
         {
             string connectionString = "Data Source = DESKTOP-UBC2MQ9; Initial Catalog = Account; Trusted_Connection = True";
@@ -52,6 +55,14 @@ namespace RoomReservation
                 {
                     MessageBox.Show("Ошибка при выполнении запроса: " + ex.Message);
                 }
+            }
+        }
+
+        private void TextBox_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Space)
+            {
+                e.Handled = true;
             }
         }
     }

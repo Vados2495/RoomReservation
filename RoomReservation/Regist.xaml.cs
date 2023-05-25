@@ -26,6 +26,17 @@ namespace RoomReservation
         {
             InitializeComponent();
             Loaded += MainWindow_Loaded;
+            tbUsername.PreviewKeyDown += TextBox_PreviewKeyDown;
+            tbEmail.PreviewKeyDown += TextBox_PreviewKeyDown;
+            pbPassword.PreviewKeyDown += TextBox_PreviewKeyDown;
+            pbConfirmPassword.PreviewKeyDown += TextBox_PreviewKeyDown;
+        }
+        private void TextBox_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Space)
+            {
+                e.Handled = true;
+            }
         }
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
