@@ -6,6 +6,53 @@
         xmlns:local="clr-namespace:RoomReservation"
         mc:Ignorable="d"
         Title="BookingUpdate" Height="450" Width="800">
+    <Window.Resources>
+        <Style TargetType="Label">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="Black"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="Indigo" ShadowDepth="0" BlurRadius="15"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="Black" ShadowDepth="0" BlurRadius="15"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="DatePicker">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="Black" ShadowDepth="0" BlurRadius="15"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Foreground" Value="Indigo"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="Indigo" ShadowDepth="0" BlurRadius="15"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="Indigo"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="Indigo" ShadowDepth="0" BlurRadius="15"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -30,9 +77,25 @@
         <TextBox Grid.Row="3" Grid.Column="1" x:Name="guestCountTextBox" Width="200" Margin="5"/>
         <Label Grid.Row="4" Grid.Column="0" Content="Guest Name:"/>
         <TextBox Grid.Row="4" Grid.Column="1" x:Name="guestNameTextBox" Width="200" Margin="5"/>
-        <Label Grid.Row="5" Grid.Column="0" Content="Cancelled:"/>
-        <CheckBox Grid.Row="5" Grid.Column="1" x:Name="isCancelledCheckBox"/>
-        <Button Grid.Row="6" Grid.Column="1" FontSize="20" x:Name="saveButton" Content="Save" Margin="105,35,500,183" Click="SaveButton_Click"/>
-        <Button Grid.Row="6" Grid.Column="1" FontSize="20" x:Name="cancelButton" Content="Cancel" Margin="305,35,301,183" Click="CancelButton_Click"/>
+        <Label Grid.Row="5" Grid.Column="0" Content="Cancelled:" Grid.RowSpan="2"/>
+        <CheckBox Grid.Row="5" x:Name="isCancelledCheckBox" Grid.ColumnSpan="2" Margin="95,0,0,263" Grid.RowSpan="2"/>
+        <Button Grid.Row="6" Grid.Column="1" FontSize="20" x:Name="saveButton" Content="Save" Margin="125,64,475,154" Click="SaveButton_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="Indigo" BorderBrush="Black" BorderThickness="1" CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Grid.Row="6" Grid.Column="1" FontSize="20" x:Name="cancelButton" Content="Cancel" Margin="348,64,252,154" Click="CancelButton_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="Indigo" BorderBrush="Black" BorderThickness="1" CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
     </Grid>
 </Window>
