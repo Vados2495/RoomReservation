@@ -49,52 +49,6 @@ namespace RoomReservation
             }
         }
 
-        private void addButton_Click(object sender, RoutedEventArgs e)
-        {
-            DataRow newRow = dataTable.NewRow();
-            dataTable.Rows.Add(newRow);
-        }
-
-        private void updateButton_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                dataAdapter.Update(dataTable);
-                LoadData();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Failed to update data: {ex.Message}");
-            }
-        }
-
-        private void deleteButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (usersGrid.SelectedItems != null && usersGrid.SelectedItems.Count > 0)
-            {
-                List<DataRowView> selectedRows = usersGrid.SelectedItems.Cast<DataRowView>().ToList();
-
-                if (MessageBox.Show($"Are you sure you want to delete {selectedRows.Count} rows?", "Confirmation", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
-                {
-                    try
-                    {
-                        foreach (DataRowView selectedRow in selectedRows)
-                        {
-                            DataRow row = selectedRow.Row;
-                            row.Delete();
-                        }
-
-                        dataAdapter.Update(dataTable);
-                        LoadData();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show($"Failed to delete data: {ex.Message}");
-                    }
-                }
-            }
-        }
-
         private void HotelsBtn_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
