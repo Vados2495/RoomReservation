@@ -25,6 +25,15 @@ namespace RoomReservation
         public Login()
         {
             InitializeComponent();
+            UsernameTextBox.PreviewKeyDown += TextBox_PreviewKeyDown;
+            passwordTextBox.PreviewKeyDown += TextBox_PreviewKeyDown;
+        }
+        private void TextBox_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Space)
+            {
+                e.Handled = true; // Отменить событие PreviewKeyDown
+            }
         }
 
         private void SignInBtn_Click(object sender, RoutedEventArgs e)
