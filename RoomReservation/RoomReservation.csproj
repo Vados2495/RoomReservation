@@ -115,6 +115,7 @@
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\BookingModel.cs" />
     <Compile Include="Regist.xaml.cs">
       <DependentUpon>Regist.xaml</DependentUpon>
     </Compile>
