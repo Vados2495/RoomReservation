@@ -67,19 +67,19 @@
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Label Grid.Row="0" Grid.Column="0" Content="Room Category:"/>
-        <ComboBox Grid.Row="0" Grid.Column="1" x:Name="categoryComboBox" Width="200" Margin="5"/>
-        <Label Grid.Row="1" Grid.Column="0" Content="Start Date:"/>
-        <DatePicker Grid.Row="1" Grid.Column="1" x:Name="startDatePicker" Width="200" Margin="5"/>
-        <Label Grid.Row="2" Grid.Column="0" Content="End Date:"/>
-        <DatePicker Grid.Row="2" Grid.Column="1" x:Name="endDatePicker" Width="200" Margin="5"/>
-        <Label Grid.Row="3" Grid.Column="0" Content="Guest Count:"/>
-        <TextBox Grid.Row="3" Grid.Column="1" x:Name="guestCountTextBox" Width="200" Margin="5"/>
-        <Label Grid.Row="4" Grid.Column="0" Content="Guest Name:"/>
-        <TextBox Grid.Row="4" Grid.Column="1" x:Name="guestNameTextBox" Width="200" Margin="5"/>
-        <Label Grid.Row="5" Grid.Column="0" Content="Cancelled:" Grid.RowSpan="2"/>
-        <CheckBox Grid.Row="5" x:Name="isCancelledCheckBox" Grid.ColumnSpan="2" Margin="95,0,0,263" Grid.RowSpan="2"/>
-        <Button Grid.Row="6" Grid.Column="1" FontSize="20" x:Name="saveButton" Content="Save" Margin="125,64,475,154" Click="SaveButton_Click">
+        <Label Grid.Row="0" FontSize="16" Grid.Column="0" Content="Room Category:"/>
+        <ComboBox Grid.Row="0" Grid.Column="1" x:Name="categoryComboBox" Width="200" Margin="5" FontSize="16"/>
+        <Label Grid.Row="1" FontSize="16" Grid.Column="0" Content="Start Date:"/>
+        <DatePicker Grid.Row="1" FontSize="16" Grid.Column="1" x:Name="startDatePicker" Width="200" Margin="5"/>
+        <Label Grid.Row="2" FontSize="16" Grid.Column="0" Content="End Date:"/>
+        <DatePicker Grid.Row="2" FontSize="16" Grid.Column="1" x:Name="endDatePicker" Width="200" Margin="5"/>
+        <Label Grid.Row="3" FontSize="16" Grid.Column="0" Content="Guest Count:"/>
+        <TextBox Grid.Row="3" FontSize="16" Grid.Column="1" x:Name="guestCountTextBox" Width="200" Margin="5"/>
+        <Label Grid.Row="4" FontSize="16" Grid.Column="0" Content="Guest Name:"/>
+        <TextBox Grid.Row="4" FontSize="16" Grid.Column="1" x:Name="guestNameTextBox" Width="200" Margin="5"/>
+        <Label Grid.Row="5" FontSize="16" Grid.Column="0" Content="Cancelled:" Grid.RowSpan="2"/>
+        <CheckBox Grid.Row="4" FontSize="16" x:Name="isCancelledCheckBox" Margin="5,33,0,217" Grid.Column="1" Grid.RowSpan="3"/>
+        <Button Grid.Row="6" Grid.Column="1" FontSize="20" x:Name="saveButton" Content="Save" Margin="125,64,460,137" Click="SaveButton_Click">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border Background="Indigo" BorderBrush="Black" BorderThickness="1" CornerRadius="10">
@@ -88,7 +88,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button Grid.Row="6" Grid.Column="1" FontSize="20" x:Name="cancelButton" Content="Cancel" Margin="348,64,252,154" Click="CancelButton_Click">
+        <Button Grid.Row="6" Grid.Column="1" FontSize="20" x:Name="cancelButton" Content="Cancel" Margin="339,64,248,137" Click="CancelButton_Click">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border Background="Indigo" BorderBrush="Black" BorderThickness="1" CornerRadius="10">
