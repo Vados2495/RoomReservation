@@ -5,20 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RoomReservation"
         mc:Ignorable="d"
-        Title="Users" Height="464" Width="807">
+        Title="Users" Height="464" Width="819">
     <Window.Resources>
         <Style TargetType="Button">
-            <Setter Property="Margin" Value="20 10 20 10"/>
-            <Setter Property="Width" Value="100"/>
-            <Setter Property="Height" Value="30"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="Indigo"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="Indigo" ShadowDepth="0" BlurRadius="15"/>
+                </Setter.Value>
+            </Setter>
         </Style>
     </Window.Resources>
-    <Grid>
+    <Grid Background="Black">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <DataGrid AutoGenerateColumns="False" x:Name ="usersGrid" Margin="0,0,218,50">
+        <DataGrid Background="Gray" AutoGenerateColumns="False" x:Name ="usersGrid" Margin="109,0,109,0">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Id}" Header="Id" Width="50"/>
                 <DataGridTextColumn Binding="{Binding Username}" Header="Username" Width="*"/>
@@ -27,12 +34,52 @@
                 <DataGridTextColumn Binding="{Binding ConfirmPassword}" Header="ConfirmPassword" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
-        <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" Margin="139,398,0,-4" Grid.RowSpan="2">
-            <Button x:Name="addButton" FontSize="16" Content="Добавить" Click="addButton_Click"/>
-            <Button x:Name="deleteButton" FontSize="16" Content="Удалить" Click="deleteButton_Click"/>
+        <StackPanel HorizontalAlignment="Left" Margin="10,157,0,174">
+            <Button x:Name="addButton" FontSize="16" Content="Add" Click="addButton_Click" Height="48" Width="73">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="Indigo" BorderBrush="Black" BorderThickness="1" CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button x:Name="deleteButton" FontSize="16" Content="Delete" Click="deleteButton_Click" Height="50" Width="75">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="Indigo" BorderBrush="Black" BorderThickness="1" CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
         </StackPanel>
-        <Button Content="Rooms" Click="RoomsBtn_Click" FontSize="16" HorizontalAlignment="Left" Margin="647,199,0,0" VerticalAlignment="Top"/>
-        <Button Content="History" Click="HistoryBtn_Click" FontSize="16" HorizontalAlignment="Left" Margin="647,295,0,0" VerticalAlignment="Top"/>
-        <Button Content="Hotels" Click="HotelsBtn_Click" FontSize="16" HorizontalAlignment="Left" Margin="647,93,0,0" VerticalAlignment="Top"/>
+        <Button Content="Rooms" Click="RoomsBtn_Click" FontSize="16" HorizontalAlignment="Left" Margin="718,177,0,0" VerticalAlignment="Top" Height="54" Width="76">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="Indigo" BorderBrush="Black" BorderThickness="1" CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Content="History" Click="HistoryBtn_Click" FontSize="16" HorizontalAlignment="Left" Margin="718,272,0,0" VerticalAlignment="Top" Height="54" Width="75">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="Indigo" BorderBrush="Black" BorderThickness="1" CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Content="Hotels" Click="HotelsBtn_Click" FontSize="16" HorizontalAlignment="Left" Margin="718,90,0,0" VerticalAlignment="Top" Height="51" Width="77">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="Indigo" BorderBrush="Black" BorderThickness="1" CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
     </Grid>
 </Window>
