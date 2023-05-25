@@ -34,12 +34,60 @@
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel HorizontalAlignment="Left" Margin="5,141,0,141">
-            <Button x:Name="addButton" FontSize="16" Content="Add" Click="addButton_Click"/>
-            <Button x:Name="updateButton" FontSize="16" Content="Edit" Click="updateButton_Click"/>
-            <Button x:Name="deleteButton" FontSize="16" Content="Delete" Click="deleteButton_Click"/>
+            <Button x:Name="addButton" FontSize="16" Content="Add" Click="addButton_Click" Height="42" Width="68">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="Indigo" BorderBrush="Black" BorderThickness="1" CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button x:Name="updateButton" FontSize="16" Content="Edit" Click="updateButton_Click" Height="40" Width="69">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="Indigo" BorderBrush="Black" BorderThickness="1" CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button x:Name="deleteButton" FontSize="16" Content="Delete" Click="deleteButton_Click" Height="46" Width="73">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="Indigo" BorderBrush="Black" BorderThickness="1" CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
         </StackPanel>
-        <Button Content="Rooms" Click="RoomsBtn_Click" FontSize="16" HorizontalAlignment="Left" Margin="582,124,0,0" VerticalAlignment="Top"/>
-        <Button Content="History" Click="HistoryBtn_Click" FontSize="16" HorizontalAlignment="Left" Margin="580,0,0,0" VerticalAlignment="Center"/>
-        <Button Content="Users" Click="UsersBtn_Click" FontSize="16" HorizontalAlignment="Left" Margin="582,277,0,0" VerticalAlignment="Top"/>
+        <Button Content="Rooms" Click="RoomsBtn_Click" FontSize="16" HorizontalAlignment="Left" Margin="582,105,0,0" VerticalAlignment="Top" Height="48" Width="70">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="Indigo" BorderBrush="Black" BorderThickness="1" CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Content="History" Click="HistoryBtn_Click" FontSize="16" HorizontalAlignment="Left" Margin="582,194,0,0" VerticalAlignment="Top" Height="44" Width="72">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="Indigo" BorderBrush="Black" BorderThickness="1" CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Content="Users" Click="UsersBtn_Click" FontSize="16" HorizontalAlignment="Left" Margin="584,278,0,0" VerticalAlignment="Top" Height="40" Width="70">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="Indigo" BorderBrush="Black" BorderThickness="1" CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
     </Grid>
 </Window>
