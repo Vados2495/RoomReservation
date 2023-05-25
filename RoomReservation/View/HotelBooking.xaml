@@ -89,6 +89,7 @@
             <ComboBoxItem Content="2"/>
             <ComboBoxItem Content="3"/>
             <ComboBoxItem Content="4"/>
+            <ComboBoxItem Content="5"/>
         </ComboBox>
 
         <Label Grid.Row="6" FontSize="16" Grid.Column="0" Content="Guest Name:"/>
