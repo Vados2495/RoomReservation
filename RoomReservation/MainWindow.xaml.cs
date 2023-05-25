@@ -27,18 +27,16 @@ namespace RoomReservation
 
         private void UserBtn_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
-
             Regist regist = new Regist();
             regist.Show();
+            this.Close();
         }
 
         private void AdminBtn_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
-
             AdminAuth admin = new AdminAuth();
             admin.Show();
+            this.Close();
         }
     }
 }

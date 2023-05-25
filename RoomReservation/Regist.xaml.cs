@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using RoomReservation.View;
 
 namespace RoomReservation
 {
@@ -65,13 +66,13 @@ namespace RoomReservation
             }
             HotelBooking hotel = new HotelBooking();
             hotel.Show();
+            this.Close();
         }
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
-
             Login login = new Login();
             login.Show();
+            this.Close();
         }
     }
 }

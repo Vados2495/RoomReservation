@@ -84,23 +84,23 @@ namespace RoomReservation
 
         private void HotelsBtn_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
             Content content = new Content();
             content.Show();
+            this.Close();
         }
 
         private void RoomsBtn_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
             Rooms rooms = new Rooms();
             rooms.Show();
+            this.Close();
         }
 
         private void HistoryBtn_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
             History history = new History();
             history.Show();
+            this.Close();
         }
     }
 }

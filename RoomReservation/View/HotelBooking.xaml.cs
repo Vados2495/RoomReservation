@@ -165,9 +165,9 @@ namespace RoomReservation.View
 
         private void SignOutButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
             Login login = new Login();
             login.Show();
+            this.Close();
         }
     }
     public class Hotel

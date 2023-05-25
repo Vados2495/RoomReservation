@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="396">
     <Grid Background="#A9A9A9">
-        <Button Content="User" FontSize="20" HorizontalAlignment="Center" Margin="0,170,0,0" VerticalAlignment="Top" Height="47" Width="92" Foreground="White">
+        <Button Content="User" FontSize="20" Click="UserBtn_Click" HorizontalAlignment="Center" Margin="0,170,0,0" VerticalAlignment="Top" Height="47" Width="92" Foreground="White">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border Background="Indigo" BorderBrush="Black" BorderThickness="1" CornerRadius="10">
@@ -16,7 +16,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button Content="Admin" FontSize="20" HorizontalAlignment="Center" Margin="0,260,0,0" VerticalAlignment="Top" Height="45" Width="92" Foreground="White">
+        <Button Content="Admin" FontSize="20" Click="AdminBtn_Click" HorizontalAlignment="Center" Margin="0,260,0,0" VerticalAlignment="Top" Height="45" Width="92" Foreground="White">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border Background="Indigo" BorderBrush="Black" BorderThickness="1" CornerRadius="10">
